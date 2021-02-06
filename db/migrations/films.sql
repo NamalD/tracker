@@ -8,5 +8,5 @@ create table films (
   added date not null,
   watched date null,
   imdb_id int null,
-  rotten_tomatoes_id int null,
+  rotten_tomatoes_id int null
 );

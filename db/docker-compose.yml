@@ -1,0 +1,11 @@
+services:
+        db:
+                image: postgres:13-alpine
+                container_name: tracker-db
+                environment:
+                        - POSTGRES_PASSWORD
+                        - POSTGRES_DB=tracker
+                ports:
+                        - 5432:5432
+                volumes:
+                        - ./migrations:/docker-entrypoint-initdb.d/
