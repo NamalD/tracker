@@ -12,6 +12,8 @@ def hello_world():
 def get_films():
     """Get a paginated list of all films"""
 
+    # TODO: Get films from DB
+
     return {
         "count": 10,
         "max": 100,
@@ -63,6 +65,9 @@ def add_film():
       "movie_db_id": integer
     }
     """
+
+    # TODO: Fetch data from themoviedb
+    # TODO: Add film to DB
 
     content = request.json
     print(content)
