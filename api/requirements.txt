@@ -1,0 +1,8 @@
+# API
+flask
+
+# DB
+# Postgres adapter
+psycopg2-binary
+# ORM
+flask-sqlalchemy
