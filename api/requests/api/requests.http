@@ -1,0 +1,19 @@
+// Root
+GET http://{{host}}/
+
+###
+
+// Get films
+GET http://{{host}}/films
+
+###
+
+// Add film
+
+POST http://{{host}}/films
+Content-Type: application/json
+
+{
+  "name": "1917",
+  "movie_db_id": 530915
+}

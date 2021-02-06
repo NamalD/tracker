@@ -1,0 +1,3 @@
+// Search for movie
+GET https://{{host}}/search/movie?query=1917
+Authorization: Bearer {{token}}
