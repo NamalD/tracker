@@ -1,5 +1,5 @@
 create table films (
-  id int primary key,
+  id int primary key generated always as identity,
   name varchar not null,
   movie_db_id int null,
   director varchar null,
