@@ -1,3 +1,9 @@
 // Search for movie
 GET https://{{host}}/search/movie?query=1917
 Authorization: Bearer {{token}}
+
+###
+
+// Get movie details
+GET https://{{host}}/movie/530915
+Authorization: Bearer {{token}}
