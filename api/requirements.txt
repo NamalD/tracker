@@ -6,3 +6,6 @@ flask
 psycopg2-binary
 # ORM
 flask-sqlalchemy
+
+# Environment
+python-dotenv

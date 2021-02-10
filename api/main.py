@@ -1,6 +1,13 @@
 from flask import Flask, request
+from models import db, Film
+import os
 
 app = Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("TRACKER_DATABASE_URI")
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db.init_app(app)
 
 
 @app.route('/')
@@ -48,22 +55,6 @@ def add_film():
       "name": string,
       "movie_db_id": integer
     }
-
-    Response schema:
-
-    201 Created
-    {
-      "id": integer,
-      "name": string,
-      "movie_db_id": integer
-    }
-
-    303 See Other
-    {
-      "id": integer,
-      "name": string,
-      "movie_db_id": integer
-    }
     """
 
     # TODO: Fetch data from themoviedb
@@ -72,8 +63,18 @@ def add_film():
     content = request.json
     print(content)
 
+    new_film = Film(content['name'], content['movie_db_id'])
+    db.session.add(new_film)
+    db.session.commit()
+
+    # TODO: Display other fields
+
     return {
-        "id": 123,
-        "name": content['name'],
-        "movieDbId": content['movie_db_id'],
+        "id": new_film.id,
+        "name": new_film.name,
+        "movieDbId": new_film.movie_db_id,
     }
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
