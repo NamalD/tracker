@@ -9,3 +9,6 @@ flask-sqlalchemy
 
 # Environment
 python-dotenv
+
+# Network
+requests

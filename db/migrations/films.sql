@@ -7,6 +7,6 @@ create table films (
   released date null,
   added date not null,
   watched date null,
-  imdb_id int null,
+  imdb_id varchar null,
   rotten_tomatoes_id int null
 );
